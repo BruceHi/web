@@ -47,3 +47,23 @@ print('---------------------')
 print(soup.body)
 print(soup.body.p)
 print(soup.body.p.b)
+
+
+print(type(soup.find('a').text))  # 两个都是str，相同
+print(type(soup.find('a').get_text()))
+print(soup.body.text)
+print(soup.body.get_text())
+print(type(soup.find('a')))
+
+print(soup.find('a'))
+print('-----------------------------------------------------')
+print(soup.body.find_all('p'))
+
+print('--------------------')
+print(soup.text)
+print(soup)
+print(soup.prettify())
+print(soup.get_text())
+print(soup.string)
+
+print(soup)

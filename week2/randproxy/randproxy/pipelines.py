@@ -8,6 +8,6 @@
 from itemadapter import ItemAdapter
 
 
-class DoubanmoviePipeline:
+class RandproxyPipeline:
     def process_item(self, item, spider):
         return item

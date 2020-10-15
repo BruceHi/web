@@ -1,4 +1,4 @@
-# Scrapy settings for doubanmovie project
+# Scrapy settings for randproxy project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'doubanmovie'
+BOT_NAME = 'randproxy'
 
-SPIDER_MODULES = ['doubanmovie.spiders']
-NEWSPIDER_MODULE = 'doubanmovie.spiders'
+SPIDER_MODULES = ['randproxy.spiders']
+NEWSPIDER_MODULE = 'randproxy.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'doubanmovie (+http://www.yourdomain.com)'
+#USER_AGENT = 'randproxy (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -45,14 +45,19 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'doubanmovie.middlewares.DoubanmovieSpiderMiddleware': 543,
+#    'randproxy.middlewares.RandproxySpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'doubanmovie.middlewares.DoubanmovieDownloaderMiddleware': 543,
-#}
+DOWNLOADER_MIDDLEWARES = {
+    'randproxy.middlewares.RandproxyDownloaderMiddleware': 543,
+    'randproxy.middlewares.RandomHttpProxyMiddleware': 400
+}
+HTTP_PROXY_LIST = [
+    'https://124.67.204.119:8118',
+    'https://220.174.236.211:8091',
+]
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
@@ -63,7 +68,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'doubanmovie.pipelines.DoubanmoviePipeline': 300,
+#    'randproxy.pipelines.RandproxyPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
