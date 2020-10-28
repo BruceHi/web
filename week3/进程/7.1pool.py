@@ -18,7 +18,7 @@ if __name__ == '__main__':
     print('父进程开始')
     p = Pool(cpu_count())
     for i in range(10):
-        p.apply_async(run, args=(i,))
+        p.apply_async(func=run, args=(i,))
     p.close()
     p.join()  # 必须要有 close，或 terminate 否则报错 AssertionError。若是 terminate，则不执行子进程了。
     print('父进程结束')

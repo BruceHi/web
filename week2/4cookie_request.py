@@ -32,7 +32,7 @@ print(response.status_code)
 print(response.text)
 
 # 下载网页时考虑 text
-# text：Content of the response, in unicode.
-# 下载图片时考虑 content
+# text： of the response, in unicode.
+# 下载图片时考虑 content，使用流式下载时
 # content："""Content of the response, in bytes."""
 
