@@ -15,8 +15,3 @@ except UserInputError as e:
     print(e)
 finally:
     del user_input  # 清理内存
-
-
-
-
-
